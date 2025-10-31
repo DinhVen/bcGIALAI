@@ -1,5 +1,5 @@
 // === CẤU HÌNH HỢP ĐỒNG ===
-const CONTRACT_ADDRESS = "0xcde283542d8fd0f34ced9c14fb50660503468de2"; // dán địa chỉ contract sau khi deploy
+const CONTRACT_ADDRESS = "0xb3cf434ec5530cee42c22755858a3b44767ce5f1"; // dán địa chỉ contract sau khi deploy
 const CONTRACT_ABI = [
 	{
 		"inputs": [],
