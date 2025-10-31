@@ -1,0 +1,110 @@
+/* ===== GIAO DIỆN CHUNG ===== */
+body {
+  background: #ffffff;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+  color: #222;
+  margin: 0;
+}
+
+header {
+  background-color: #b30000;
+  color: #ffd700;
+  padding: 25px;
+  border-bottom: 5px solid #ffd700;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+h2 {
+  color: #b30000;
+  margin-top: 20px;
+}
+
+.candidate-card {
+  border: 2px solid #b30000;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px auto;
+  width: 320px;
+  background-color: #fff8f8;
+  box-shadow: 0 0 10px rgba(179, 0, 0, 0.15);
+}
+
+button {
+  background-color: #b30000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #800000;
+}
+
+footer {
+  background-color: #b30000;
+  color: #ffd700;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* ===== HẠC BAY ===== */
+.hac-trai, .hac-phai {
+  position: fixed;
+  top: 60%;
+  width: 420px;
+  height: auto;
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(218,165,32,0.4)) brightness(1.1) sepia(0.3) saturate(1.2);
+  animation: hacBayTaiCho 8s ease-in-out infinite;
+}
+
+/* Hạc bên trái – lật gương */
+.hac-trai {
+  left: 5%;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Hạc bên phải – hướng phải */
+.hac-phai {
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+/* Hạc bay nhẹ tại chỗ */
+@keyframes hacBayTaiCho {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-53%) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Khi bầu chọn thành công – hạc vỗ cánh */
+.hac-trai.fly, .hac-phai.fly {
+  animation: hacVotCanh 1.5s ease-in-out 2;
+}
+@keyframes hacVotCanh {
+  0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.9; }
+  50% { transform: translateY(-58%) scale(1.15); opacity: 1; }
+}
+
+/* Đảm bảo nội dung nổi trên nền */
+body * {
+  position: relative;
+  z-index: 1;
+}
